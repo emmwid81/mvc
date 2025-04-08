@@ -1,0 +1,36 @@
+#
+# This is a modified rewrite to fit when working on both local development
+# environment and publishing to www.student.bth.se.
+#
+# Do NOT forget to change /~mosstud/ to your own student acronym.
+#
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /~emme24/dbwebb-kurser/mvc/me/kmom01/symfony/app/public/build/$2 [L,NC,R=302]
+
+RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /dbwebb-kurser/mvc/me/kmom01/symfony/app/public/build/$2 [L,NC,R=302]
+
+
+# Igore real files (images, stylesheets etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*) - [NC,L]
+
+# Rewrite 1 - For request via www.student.bth.se
+RewriteCond %{HTTP_HOST} ^www\.student\.bth\.se$ [NC]
+RewriteRule (.*) /~emme24/dbwebb-kurser/mvc/me/kmom01/symfony/app/public/index.php/$1 [NC,L]
+# snodd från nikD
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /~emme24/dbwebb-kurser/mvc/me/report/public/build/$2 [L,NC,R=302]
+
+# Rewrite 2 - For other requests
+RewriteCond %{HTTP_HOST} !^www\.student\.bth\.se$ [NC]
+RewriteRule (.*) index.php/$1 [NC,L]
+# snodd från nikD
+RewriteCond %{REQUEST_URI} ^(.*)/build/build/(.*)$
+RewriteRule ^(.*)/build/build/(.*)$ /dbwebb-kurser/mvc/me/kmom01/app/public/build/$2 [L,NC,R=302]
+

@@ -1,0 +1,20 @@
+header {
+    height: 150px;
+    font-size: 42px;
+}
+
+body {
+    background-color: skyblue;
+    margin: 0 auto;
+    background: url('../images/background.jpg');
+    background-size: cover;
+}
+
+main {
+    max-width: 640px;
+    margin: auto;
+}
+
+h1 {
+    border-bottom: 4px double black;
+}
