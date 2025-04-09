@@ -15,7 +15,7 @@ header {
 }
 
 nav {
-    background-color: skyblue;
+    background-color: rgb(44,64,61);
 }
 
 nav > ul {
@@ -56,7 +56,7 @@ h1 {
 footer {
     padding: 2em;
     height: 230px;
-    background-color: skyblue;
+    background-color: rgb(44,64,61);
     color: whitesmoke;
     font-size: 18px;
 }
@@ -100,4 +100,19 @@ footer {
     font-family: "VT323", monospace;
     font-weight: 400;
     font-style: normal;      
+}
+.droplinks {
+    display: none;
+    background-color: rgb(73, 155, 188);
+    position: absolute;
+    z-index: 1;
+}
+  
+.dropdown:hover .droplinks {
+    display: block;
+}
+
+.downright {
+    margin-right: 0;
+    margin-bottom: 0;
 }
