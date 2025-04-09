@@ -11,21 +11,29 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-            {# {% block importmap %}{{ importmap('app') }}{% endblock %} #}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-
-        <header class="site-header" style="background-image: url({{ asset('img/background.jpg') }})">
+    <body>
+        <header class="site-header">
             <span class="site-title">My Symfony Site</span>
         </header>
-    <body>
         <nav>
             <ul>
-                <li><a href="{{ path('home') }}">Home</a></li>
+                <li><a href="{{ path('me') }}">Home</a></li>
                 <li><a href="{{ path('about') }}">About</a></li>
-                <li><a href="{{ path('lucky_number') }}">Lucky number</a></li>
+                <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
             </ul>
         </nav>
         {% block body %}{% endblock %}
+        <footer>
+            <div>In the words of the wise Rushadicus - "neverborn rainbow beasts of bounty bounding towards and away from all which were fun and glunty upon the wake of morrow's mirth
+                not to be claimed ordained or speculous, my species is thnarkus jicktoclade
+                and its numbers go on for awhile and become slides are numbers become vegetable?
+                swift math world imprinting upon itself the various longings invented by who and what for why where when?
+                i am not that which says it is not baffled by the lack of non infinite explanations
+                ithumixx bjickwilox"</div>
+        </footer>
     </body>
 </html>

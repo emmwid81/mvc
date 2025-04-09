@@ -1,20 +1,85 @@
-header {
-    height: 150px;
-    font-size: 42px;
+html,
+body {
+    background-color: whitesmoke;
+    margin: 0 auto;
+    padding: 0;
 }
 
-body {
-    background-color: skyblue;
-    margin: 0 auto;
-    background: url('../images/background.jpg');
+header {
+    font-size: 42px;
+    color: whitesmoke;
+    background: url('../images/batbanner.jpg') no-repeat;
     background-size: cover;
+    margin: 0;
+    height: 180px;
+}
+
+nav {
+    background-color: skyblue;
+}
+
+nav > ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+li a:hover {
+background-color: rgb(73, 155, 188);
 }
 
 main {
-    max-width: 640px;
     margin: auto;
+    max-width: 64%;
+    min-height: 400px;
+    padding: 2em;
 }
 
 h1 {
     border-bottom: 4px double black;
+}
+
+footer {
+    padding: 2em;
+    height: 230px;
+    background-color: skyblue;
+    color: whitesmoke;
+    font-size: 18px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.onethird {
+    width: 33%;
+}
+
+.twothirds {
+    width: 66%;
+}
+
+.aside {
+    border: 1px solid black;
 }

@@ -4,16 +4,25 @@
 
 {% block body %}
 <main>
-    <h1>About</h1>
-    <p>An image which can be clicked on.</p>
-    <a href="{{ asset('img/glider.svg') }}">
-        <img src="{{ asset('img/glider.svg') }}" alt="">
-    </a>
-    <h1>About</h1>
-<p>An image which can be clicked on.</p>
-<a href="{{ asset('img/glider.svg') }}">
-    <img src="{{ asset('img/glider.svg') }}" alt="">
-</a>
-<img src="{{ asset('build/images/background.jpg') }}" alt="">
+<div class="columns">
+<div class="onethird aside col">
+    As part of this course I have created a github repo of my own, which can be viewed <a href="https://github.com/emmwid81/mvc.git">here.</a>
+</div>
+<div class="twothirds col">
+    <img src="{{ asset('build/images/dbwebbmvc.jpg') }}" alt="screenshot of course intro">
+
+    This course focuses on programming for the web in the context of object orientation.
+    As we trudge along we will hopefully pick up some useful skills along the way, including but not 
+    limited to:
+    <ul>
+        <li>Using object orientated PHP to create a reusable code base for an application </li>
+        <li>Developing a web application within a framework </li>
+        <li>Setting up a server for development </li>
+        <li>Using object orientated programming to interact with a database</li>
+    </ul>
+
+    <a href="https://github.com/dbwebb-se/mvc.git">View this course on github</a>
+</div>
+</div>
 </main>
 {% endblock %}
