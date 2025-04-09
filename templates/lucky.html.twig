@@ -1,11 +1,16 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Lucky{% endblock %}
-
+{% block navbar_class %}crafty{% endblock %}
 {% block body %}
-<main>
-    <h1>Magic number</h1>
-    <p>Welcome to my pawesome magical homepage.</p>
-    <p>This is the current lucky number: {{ number }}</p>
-</main>
+<div class="mines">
+    <main class="opaque">
+        <h2>Your personality as a mincraft block. How exiting. Much happy. Very science.</h2>
+        <p>Your minecraft block is {{ blockName }}. It means that you are {{ blockPersonality }}.
+        </p>
+        <img src="{{ asset('build/images/' ~ number ~ '.jpg') }}">
+    </main>
+
+</div>
 {% endblock %}
+{% block footer_class %}crafty{% endblock %}

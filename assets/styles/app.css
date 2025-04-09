@@ -83,3 +83,21 @@ footer {
 .aside {
     border: 1px solid black;
 }
+
+.mines {
+    width: 100%;
+    background: url('../images/mines.jpg') no-repeat;
+    background-size: cover;
+}
+
+.opaque {
+    color: whitesmoke;
+    background-color: rgba(138, 152, 165, 0.3);
+}
+
+.crafty {
+    background: url('../images/mossy.jpg');
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;      
+}
