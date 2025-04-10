@@ -23,7 +23,7 @@
         </header>
         <nav class="{% block navbar_class %}navbar{% endblock %}">
             <ul>
-                <li><a href="{{ path('me') }}">Home</a></li>
+                <li><a href="{{ path('home') }}">Home</a></li>
                 <li><a href="{{ path('about') }}">About</a></li>
                 <li><div class="dropdown">
                     <a href="{{ path('report') }}">Report</a>
@@ -31,6 +31,7 @@
                         <a href="{{ path('report') }}#kmom01">Kmom01</a>
                     </div>
                 </div></li>
+                <li><a href="{{ path('api') }}">API</a></li>
                 <li><a href="{{ path('lucky') }}">Lucky</a></li>
             </ul>
         </nav>
