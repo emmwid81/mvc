@@ -1,6 +1,9 @@
 # My mvc page
 =============
 
+![My mvc page](/assets/images/screenshot.jpg)
+
+
 ## Description:
 This repo contains my assignments and experiments for the course "mvc". It is built using the framework Symfony with
 Twig as a template engine.
