@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card game{% endblock %}
+
+{% block main %}
+<main class="main cardgame">
+<h1>Card game</h1>
+
+<ul>
+    <li><a href="{{ path('session') }}">Session keys</a></li>
+    <li><a href="{{ path('session_delete') }}">Delete session</a></li>
+    <li><a href="{{ path('card_deck') }}">Show sorted card deck</a></li>
+    <li><a href="{{ path('shuffle') }}">Shuffle card deck</a></li>
+    <li><a href="{{ path('draw') }}">Draw one card</a></li>
+    <li>
+        <form method="get" action="{{ path('draw_number', {'num': app.request.get('num_cards', 1)}) }}">
+            <label for="num_cards">Draw several cards:</label>
+            <input type="number" id="num_cards" name="num_cards" min="1" max="{{ app.session.get('cards_left', 1) }}" value="1">
+            <input type="submit" value="Draw">
+        </form>
+    </li>
+</ul>
+
+<div class="uml">
+    <h3>Under huven.</h3>
+    <p>Mina klasser för kort och korthantering ser ut som följande:
+        Card - skapar ett spelkort med färg och värde, har metoder för att returnera
+        exempelvis kortet som sträng eller en symbolisk representation av kortet.
+        CardHand -  en samling kortobjekt. Lägger till kortobjekten som skickas in i en array och kan returnera arrayer med korten som strängar
+        eller som symboler.
+        SuitOfCards - ärver av CardHand och skapar en komplett svit innehållande 13 kortobjekt i en färg.
+        DeckOfCards - skapar en samling av kortsviter (SuitOfCards-objekt) som den samlar i en array.
+        Som default skapar den en svit av varje färg men kan skapa flera av en färg.
+        Kan blandas, vilket blandar de kort som finns kvar i arrayen samt sorteras,
+        vilket returnerar en kopia av arrayen sorterade på färg och värde.
+    </p>
+    
+</div>
+</main>
+{% endblock %}

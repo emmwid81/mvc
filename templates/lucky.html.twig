@@ -1,16 +1,19 @@
 {% extends "base.html.twig" %}
 
 {% block title %}Lucky{% endblock %}
-{% block navbar_class %}crafty{% endblock %}
-{% block body %}
-<div class="mines">
-    <main class="opaque">
+{% block navbar_class %}crafty navbar{% endblock %}
+{% block main %}
+<main class="mines">
+    <div class="opaque">
+        <div class="onethird center">
         <h2>Your personality as a minecraft block. How exiting. Much happy. Very science.</h2>
         <p>Your minecraft block is {{ blockName }}. It means that you are {{ blockPersonality }}.
         </p>
         <img src="{{ asset('build/images/' ~ number ~ '.jpg') }}">
-    </main>
+        </div>
+    </div>
+</main>
 
-</div>
+
 {% endblock %}
 {% block footer_class %}crafty{% endblock %}
