@@ -4,14 +4,14 @@ namespace App\Card;
 
 class Card
 {
-    public $suitName;
-    public $cardValue;
-    public $cardName;
-    public $suitSymbol;
-    public $cardNumber;
-    public array $cardNames = ["A", "2", "3", "4", "5", "6", "7",
+    private string $suitName;
+    private int $cardValue;
+    private string $cardName;
+    private string $suitSymbol;
+    private int $cardNumber;
+    private array $cardNames = ["A", "2", "3", "4", "5", "6", "7",
     "8", "9", "10", "J", "Q", "K"];
-    public array $suitSymbols = [
+    private array $suitSymbols = [
         "spades" => "&#9824;",
         "hearts" => "&#9825;",
         "diamonds" => "&#9826;",

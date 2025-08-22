@@ -212,6 +212,12 @@ input {
     list-style-type: none;
 }
 
-.cardgame a {
+.cardgame a,
+.cardgame label {
     color: white;
+}
+.uml {
+    background-color: white;
+    padding: 2em;
+    margin: 2em;
 }

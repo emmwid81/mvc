@@ -22,7 +22,7 @@ class DeckOfCards
         $suitValue = 0;
         foreach ($suits as $suit) {
             $cardSuit = new SuitOfCards($suit, $suitValue);
-            $this->cardDeck = [...$this->cardDeck, ...$cardSuit->hand];
+            $this->cardDeck = [...$this->cardDeck, ...$cardSuit->getCardHand()];
             $suitValue += 100;
         }
     }
@@ -55,6 +55,7 @@ class DeckOfCards
      * Sorts by card number which is the cards individual number
      * appointed to it when created. The number is the card value plus
      * the suite value.
+     * @return array $sortedDeck
      */
     public function sortDeck(): array
     {

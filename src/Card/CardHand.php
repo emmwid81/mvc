@@ -6,7 +6,7 @@ use App\Card\Card;
 
 class CardHand
 {
-    public array $hand = [];
+    protected array $hand = [];
     /**
      * Constructor
      * Object that holds Card objects.
@@ -19,8 +19,13 @@ class CardHand
     {
         $this->hand[] = $card;
     }
+    public function getCardHand(): array
+    {
+        return $this->hand;
+    }
     /**
      * Loops through cards in hand, returns array of card symbols.
+     * @return array $cards
      */
     public function getCardSymbols(): array
     {

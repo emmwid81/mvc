@@ -7,7 +7,7 @@ use App\Card\CardHand;
 
 class SuitOfCards extends CardHand
 {
-    public string $suitName;
+    private string $suitName;
     public function __construct(string $suitName, int $suitValue)
     {
         parent::__construct();
