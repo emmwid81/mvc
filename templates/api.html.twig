@@ -5,5 +5,29 @@
 {% block main %}
 <main class="main">
     <h1>Json routes</h1>
-    <a href="{{ path('quote') }}">Daily quote</a>
+    <form method="get" action="{{ path('quote') }}">
+        <input type="submit" value="Quote of the day">
+    </form>
+    <p>Visar dagens datum, tid samt ett inspirerande citat.</p>
+    <br>
+    <form method="get" action="{{ path('deck') }}">
+        <input type="submit" value="Sorted deck">
+    </form>
+    <p>Visar alla kort i en instans av klassen DeckOfCards, sorterade.</p>
+    <br>
+    <form method="post" action="{{ path('shuffle') }}">
+        <input type="submit" value="Shuffled deck">
+    </form>
+    <p>Blandar och visar kortleken.</p>
+    <br>
+    <form method="post" action="{{ path('json_draw', {'num': 1}) }}">
+        <input type="submit" value="Draw one">
+    </form>
+    <p>Drar ett kort och visar upp det samt hur många kort som är kvar i kortleken.</p>
+    <br>
+
+    <form method="post" action="{{ path('json_draw', {'num': 5}) }}">
+        <input type="submit" value="Draw five">
+    </form>
+    <p>Drar flera kort och visar upp tillsammans med antal resterande i kortleken.</p>
 </main>>{% endblock %}

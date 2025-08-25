@@ -47,4 +47,12 @@ class Card
     {
         return "{$this->suitSymbol} {$this->cardName}";
     }
+    public function getCardAsArray(): array
+    {
+        return [
+            "suit" => $this->suitName,
+            "value" => $this->cardValue,
+            "name" => $this->getCardString()
+        ];
+    }
 }

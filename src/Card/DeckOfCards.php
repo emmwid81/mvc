@@ -9,7 +9,6 @@ class DeckOfCards
 {
     /**
      * @var array $cardDeck an array of card objects.
-     * @var array $sortedDeck copy of cardDeck but sorted by suit and value.
      */
     public array $cardDeck = [];
     /**
@@ -65,5 +64,15 @@ class DeckOfCards
             return $a->getCardNumber() <=> $b->getCardNumber();
         });
         return $sortedDeck;
+    }
+    public function deckToJson(): array
+    {
+        $cards = [];
+
+        foreach ($this->cardDeck as $card) {
+            $cards[] = $card->getCardAsArray();
+        }
+
+        return $cards;
     }
 }

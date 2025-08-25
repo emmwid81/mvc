@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Card\Card;
 use App\Card\DeckOfCards;
 use App\Card\CardHand;
-
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -17,8 +16,7 @@ class CardGameController extends AbstractController
     #[Route("/card", name: "card_start")]
     public function home(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         if ($session->has("card_deck")) {
             $currentDeck = $session->get("card_deck");
         } else {
@@ -113,13 +111,14 @@ class CardGameController extends AbstractController
         ];
         return $this->render('/card/draw.html.twig', $data);
     }
-    #[Route("/card/deck/draw/{num<\d+>}", name: "draw_number", methods: ['GET'])]
+    #[Route("/card/deck/draw/{num<\d+>}", name: "draw_number", methods: ['POST'])]
     public function drawNumber(
         int $num,
         Request $request,
-        SessionInterface $session): Response {
+        SessionInterface $session
+    ): Response {
 
-        $numberCards = $request->query->get('num_cards', 1);
+        $numberCards = $request->request->get('num_cards', 1);
 
         $currentDeck = $session->get("card_deck");
         $currentHand = $session->get("card_hand");
