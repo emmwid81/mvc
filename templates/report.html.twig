@@ -24,4 +24,38 @@
             i höstas men känslan av att börja om från nästan noll är tung ibland.
         </p>
     </div>
+    <br>
+    <div id="kmom02">
+        <h2>Kmom02</h2>
+        <p>"Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP."</p>
+        <p>Som jag förstår det används arv när man exempelvis vill utöka funktionalitet hos en existerande klass. Det kan användas för att skapa ett
+            specialfall av ett objekt eller lägga till egenskaper som behövs utan att ändra i föräldraklassen. Komposition är när en klass innehåller
+            objekt av en annan klass, som i uppgiften när kortleken är en komposition av kortobjekt. Trait är ett sätt att skapa gemensam funktionalitet som kan
+            delas mellan olika klasser utan att behöva ingå i klassens definition, en slags modul till klasserna kan man kanske säga. Interface å sin sida 
+            specificerar vad klassen ska kunna göra, ett slags kontrakt som klassen måste följa. En klass som implementerar ett eller flera interface måste
+            innehålla kod för att lösa det som krävs i den/dem.
+        </p>
+        <br>
+        <p>"Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?"</p>
+        <p>Jag hade en idé om att undvika upprepningar i koden och i instruktionen gavs ju också en del frihet att utforma klasserna efter eget huvud. Eftersom en
+            kortlek i vanliga fall består av fyra sviter vars enda särdrag är färgen tyckte jag en svit borde vara en klass och eftersom en svit bara är en samling kortobjekt
+            fick den ärva av klassen CardHand som ju också är en samling kortobjekt. Sviten är då ett slags specialhand och ärver av handen. Kortleken är en komposition av sviter.
+            Såhär i efterhand undrar jag om DeckOfCards borde haft en metod för att dra kort, jag gör egentligen bara det direkt i controllern i nuläget
+            men det kanske blir läge att implementera en sådan metod i nästa steg.
+            Jag gjorde misstaget att från början göra alla metoder och attribut publika, jag kunde inte omedelbart se vad som skulle vara dolt och inte tyckte jag,
+            och när jag väl började bli färdig fick jag ändra på en del saker för att kapsla in det som verkade lämpligt.
+        </p>
+        <br>
+        <p>"Vilka är dina reflektioner så här långt med att jobb i Symfony med applikationskod enligt MVC?"</p>
+        <p>Jag börjar nog vänja mig vid det här ramverket till slut också, mycket verkar ju ganska smidigt egentligen, men det blev trassligt när jag skulle göra routerna draw och draw/:number.
+            Post och get har vi ju redan jobbat mycket med och jag tyckte jag hade fått bra kläm på det i andra kurser och ramverk, tex i express, men jag hade svårt att få till de routerna och
+            formulären. Möjligen missförstod jag instruktionen för det kravet också, jag sökte ganska mycket i discord-chatten och såg att jag inte var den första som undrade om den biten.
+        </p>
+        <br>
+        <p>"Vilken är din TIL för detta kmom?"</p>
+        <p>Jag hade lite svårt att greppa det där med arv, det var framför allt därför jag ville göra på ett annat sätt med arvet än vad som föreslogs i instruktionerna.
+            Om jag hade löst det med en CardGraphic hade jag ju kunnat kopiera övningen med tärningarna ganska rakt av och då hade jag nog inte kommit närmare förståelsen kände jag.
+            Min lösning med svit som ett arv av handen kanske inte är det bästa egentligen men det hjälpte mig i alla fall att förstå hur arv fungerar och vad man kan använda det till tror jag.
+        </p>
+    </div>
 </main>>{% endblock %}

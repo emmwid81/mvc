@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Play 21{% endblock %}
+
+{% block main %}
+<main class="main">
+    <h1>Card game "21"</h1>
+    <p>In this game, the goal is to beat the bank by having a hand that is worth exactly 21 or as close to it as possible.
+        A round starts with the player being dealt one card.
+        Each turn starts with the player choosing to either end the turn or being dealt one more card.
+        If the total value of the players hand exceeds 21 the bank wins.
+        If the player manages to score exactly 21 the player wins.
+        If the player chooses to end the turn the bank takes its turn.
+        The goal of the bank is to score higher than the player (not exceeding 21) or exactly 21.
+        If the bank chooses to end its turn the player and bank final scores are compared.
+        The bank wins with a score equal to or higher than the player, the player only wins with a score higher than the bank.
+    </p>
+    <p>Jacks are worth 11, queens 12 and kings 13.</p>
+    <p>Aces are worth either 1 or 14.</p>
+    <div class="link">
+        <a href="https://sv.wikipedia.org/wiki/Tjugoett_(kortspel)">Game rules on wikipedia</a>
+        <a href="{{ path('documentation') }}">Documentation</a>
+    </div>
+    <div class="center">
+        <button class="start"><a href="{{ path('play') }}">Start game</a></button>
+    </div>
+</main>
+{% endblock %}

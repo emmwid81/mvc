@@ -15,6 +15,9 @@ class CardHand
     {
         $this->hand = [];
     }
+    /**
+     * Appends a card object to the hand array.
+     */
     public function addCard(Card $card): void
     {
         $this->hand[] = $card;

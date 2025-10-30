@@ -60,8 +60,8 @@ class DeckOfCards
     {
         $sortedDeck = $this->cardDeck;
 
-        usort($sortedDeck, function (Card $a, Card $b) {
-            return $a->getCardNumber() <=> $b->getCardNumber();
+        usort($sortedDeck, function (Card $firstCard, Card $secondCard) {
+            return $firstCard->getCardNumber() <=> $secondCard->getCardNumber();
         });
         return $sortedDeck;
     }

@@ -17,15 +17,13 @@ class CardGameController extends AbstractController
     public function home(
         SessionInterface $session
     ): Response {
+        $currentDeck = new DeckOfCards();
         if ($session->has("card_deck")) {
             $currentDeck = $session->get("card_deck");
-        } else {
-            $currentDeck = new DeckOfCards();
         }
+        $currentHand = new CardHand();
         if ($session->has("card_hand")) {
             $currentHand = $session->get("card_hand");
-        } else {
-            $currentHand = new CardHand();
         }
 
         $session->set("card_deck", $currentDeck);
@@ -39,7 +37,7 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
         $sessionData = $session->all();
-        return $this->render('/card/session.html.twig');
+        return $this->render('/card/session.html.twig', $sessionData);
     }
     #[Route("/card/session_delete", name: "session_delete", methods: ['GET'])]
     public function delete(
@@ -61,7 +59,7 @@ class CardGameController extends AbstractController
     ): Response {
 
         $currentDeck = $session->get("card_deck");
-        $currentHand = $session->get("card_hand");
+        // $currentHand = $session->get("card_hand");
         $sortedDeckArray = $currentDeck->sortDeck();
         $sortedDeckSymbols = [];
         foreach ($sortedDeckArray as $card) {
@@ -95,7 +93,7 @@ class CardGameController extends AbstractController
 
         $currentDeck = $session->get("card_deck");
         $currentHand = $session->get("card_hand");
-        $cardsLeft = $session->get("cards_left");
+        // $cardsLeft = $session->get("cards_left");
 
         $drawnCards = [];
         $drawnCard = array_pop($currentDeck->cardDeck);

@@ -71,6 +71,9 @@ main.main {
 h1 {
     border-bottom: 4px double black;
 }
+h2 {
+    margin-bottom: 0.5em;
+}
 
 footer {
     padding: 2em;
@@ -216,11 +219,11 @@ input {
 .cardgame label {
     color: white;
 }
-.uml {
+.padded {
     background-color: white;
     padding: 2em;
     margin: 2em;
 }
-.uml img {
+.padded img {
     max-width: 100%;
 }

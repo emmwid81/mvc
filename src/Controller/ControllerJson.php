@@ -65,7 +65,7 @@ into a smoking heap of rubble rather than give up wage-slavery of its own free w
         );
         return $response;
     }
-    #[Route("/api/deck/shuffle", name: "json_shuffle", methods: ['POST'])]
+    #[Route("/api/deck/json_shuffle", name: "json_shuffle", methods: ['POST'])]
     public function shuffledDeck(
         SessionInterface $session
     ): Response {

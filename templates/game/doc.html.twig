@@ -1,0 +1,52 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Docs for 21{% endblock %}
+
+{% block main %}
+<main class="main">
+    <div class="padded">
+    <h2>Problem solving - flowcharts:</h2>
+    <img class="center" src="{{ asset('build/images/twentyone-flowchart.png') }}" alt="flowchart for game">
+    <img class="center" src="{{ asset('build/images/turn-flowchart.png') }}" alt="flowchart for turn">
+    </div>
+    <div class="padded">
+        <h2>Problem solving - pseudo code:</h2>
+        <pre>
+        start game
+            create card deck
+            shuffle deck
+            create bank
+            create player
+            WHILE not game over
+                start round
+                deal card
+                player turn loop
+                IF not player win/lose THEN
+                    bank turn loop
+                ENDIF
+            ENDWHILE
+        end game
+        </pre>
+    </div>
+    <div class="padded">
+        <h2>Game classes:</h2>
+        <p>Card</p>
+        <p>- a playing card</p>
+        <p>- name and value</p>
+        <p>CardHand</p>
+        <p>- a collection of cards</p>
+        <p>- add card</p>
+        <p>DeckOfCards</p>
+        <p>- deck of 52 playing cards</p>
+        <p>- shuffle deck</p>
+        <p>Player</p>
+        <p>- holds a hand of cards</p>
+        <p>- holds money/points</p>
+        <p>Bank</p>
+        <p>- special player</p>
+        <p>TwentyOneGame</p>
+        <p>- sets up a game of 21</p>
+        <p>- holds a deck, players and keeps score</p>
+    </div>
+</main>
+{% endblock %}
